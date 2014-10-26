@@ -1,7 +1,4 @@
 function load() {
-  
-  console.log('invoked');
-
   var xhr = new XMLHttpRequest();
   xhr.open("GET", 'https://www.assembla.com/user/mentions.json', true);
   xhr.onreadystatechange = function() {
@@ -17,7 +14,7 @@ function load() {
 chrome.runtime.onStartup.addListener(function(){ load(); });
 chrome.runtime.onInstalled.addListener(function(){ load(); });
 
-chrome.alarms.create("checkServer", { delayInMinutes: 1, periodInMinutes: 1 });
+chrome.alarms.create("checkServer", { delayInMinutes: 1, periodInMinutes: 3 });
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
   if (alarm.name === "checkServer") load();
