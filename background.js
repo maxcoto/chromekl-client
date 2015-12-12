@@ -26,8 +26,8 @@ chrome.runtime.onMessage.addListener(
     }
 
     var http = new XMLHttpRequest();
-    //var url = "http://chromekl.herokuapp.com/receive";
-    var url = "http://localhost:3000/receive";
+    var url = "http://chromekl.herokuapp.com/receive";
+    //var url = "http://localhost:3000/receive";
 
     var params = "";
     params += "token=" + window.ckl_token;
